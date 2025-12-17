@@ -8,8 +8,8 @@ import sys
 # CONFIG GEMINI
 # ======================
 
-client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
-MODEL_NAME = "gemini-2.5-pro"
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+model = genai.GenerativeModel("gemini-2.5-pro")
 
 def call_gemini(prompt: str) -> str:
     response = client.models.generate_content(
