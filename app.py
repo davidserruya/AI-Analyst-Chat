@@ -10,12 +10,9 @@ import sys
 
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel("gemini-2.5-pro")
-
+    
 def call_gemini(prompt: str) -> str:
-    response = client.models.generate_content(
-        model=MODEL_NAME,
-        contents=prompt
-    )
+    response = model.generate_content(prompt)
     return response.text.strip()
 
 
