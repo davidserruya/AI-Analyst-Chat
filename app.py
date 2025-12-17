@@ -184,7 +184,7 @@ if st.session_state.df is not None:
                 output = execute_code(code, st.session_state.df)
                 answer = interpret_result(question, st.session_state.df, output)
 
-                st.write(answer)
+                st.text(answer)
 
         st.session_state.messages.append({
             "role": "assistant",
