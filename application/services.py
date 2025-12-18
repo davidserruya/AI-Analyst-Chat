@@ -19,7 +19,9 @@ Question utilisateur :
 "{question}"
 
 Donne UNIQUEMENT du code Python avec un print().
-PAS DE RÉPONSE QUI COMMENCE PAR ``Python 
+1. **INTERDIT :** N'ajoutez AUCUN commentaire, aucune introduction, aucune conclusion. 
+2. **INTERDIT :** N'ajoutez AUCUN bloc de code Markdown (c'est-à-dire pas de ```python mais JAMAIS)
+3. **OBLIGATOIRE :** Le code doit contenir une instruction 'print()' affichant clairement le résultat de l'analyse (utiliser .to_markdown() ou .to_string() pour les DataFrames/Series).
 """
     return call_gemini(model, prompt)
 
