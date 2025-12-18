@@ -65,6 +65,6 @@ if st.session_state.df is not None:
             code = ask_gemini_for_code(model, question, st.session_state.df)
             output = execute_code(code, st.session_state.df)
             answer = interpret_result(model, question, st.session_state.df, output)
-            st.text(answer)
+            st.write(answer)
 
         st.session_state.messages.append({"role": "assistant", "content": answer})
