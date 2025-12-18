@@ -19,6 +19,7 @@ Question utilisateur :
 "{question}"
 
 Donne UNIQUEMENT du code Python avec un print().
+PAS DE RÉPONSE QUI COMMENCE PAR ``Python 
 """
     return call_gemini(model, prompt)
 
@@ -29,7 +30,7 @@ def interpret_result(model, question: str, df: pd.DataFrame, output: str) -> str
     df_info = buffer.getvalue()
 
     prompt = f"""
-Tu es un consultant data senior.
+Tu es un consultant Data.
 
 Structure du DataFrame :
 {df_info}
@@ -40,6 +41,6 @@ Question utilisateur :
 Résultat obtenu :
 {output}
 
-Réponds clairement et de façon orientée décision.
+Réponds à la question de l'utilisateur avec le résultat obtenu, interprete ce résultat. Ne vas pas trop loin
 """
     return call_gemini(model, prompt)
