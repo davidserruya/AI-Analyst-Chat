@@ -17,11 +17,12 @@ Structure du DataFrame :
 
 Question utilisateur :
 "{question}"
-
+    
+INTERDIT DE METTRE ```python
+JUSTE LE CODE
 Donne UNIQUEMENT du code Python avec un print().
 1. **INTERDIT :** N'ajoutez AUCUN commentaire, aucune introduction, aucune conclusion. 
-2. **INTERDIT :** N'ajoutez AUCUN bloc de code Markdown (c'est-à-dire pas de ```python mais JAMAIS)
-3. **OBLIGATOIRE :** Le code doit contenir une instruction 'print()' affichant clairement le résultat de l'analyse (utiliser .to_markdown() ou .to_string() pour les DataFrames/Series).
+2. **OBLIGATOIRE :** Le code doit contenir une instruction 'print()' affichant clairement le résultat de l'analyse (utiliser .to_markdown() ou .to_string() pour les DataFrames/Series).
 """
     return call_gemini(model, prompt)
 
