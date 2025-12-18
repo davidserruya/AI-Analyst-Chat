@@ -201,7 +201,7 @@ if st.session_state.df is not None:
 
             # Résultat final
             placeholder.empty()
-            placeholder.text(answer)
+            placeholder.write(answer)
 
         st.session_state.messages.append({
             "role": "assistant",
