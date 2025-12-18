@@ -191,6 +191,8 @@ if st.session_state.df is not None:
             placeholder.markdown("🤔 **L’analyste réfléchit…**")
             code = ask_gemini_for_code(question, st.session_state.df)
 
+            st.write(code)
+
             # Étape 2
             placeholder.markdown("🧠 **Analyse des données…**")
             output = execute_code(code, st.session_state.df)
