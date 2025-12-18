@@ -160,7 +160,7 @@ if uploaded_file:
 
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
-        st.text(msg["content"])
+        st.write(msg["content"])
 
 # ======================================================
 # ⌨️ INPUT UTILISATEUR
