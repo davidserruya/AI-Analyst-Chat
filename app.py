@@ -199,6 +199,10 @@ if st.session_state.df is not None:
             placeholder.markdown("🧠 **Analyse des données…**")
             output = execute_code(code, st.session_state.df)
 
+            st.write('DAVID')
+            st.write(output)
+            st.write('DAVID')
+
             # Étape 3
             placeholder.markdown("📊 **Interprétation des résultats…**")
             answer = interpret_result(question, st.session_state.df, output)
