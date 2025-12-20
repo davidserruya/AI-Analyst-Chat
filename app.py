@@ -53,7 +53,7 @@ if uploaded_file:
 # Chat
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
-        st.text(msg["content"])
+        st.write(msg["content"])
 
 if st.session_state.df is not None:
     question = st.chat_input("Pose ta question")
