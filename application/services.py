@@ -17,7 +17,13 @@ Structure du DataFrame :
 
 Question utilisateur :
 "{question}"
-    
+
+JE TE DONNE UN EXMEPLE 
+ON ne veut PAS ça : ```python
+print(df.mean(numeric_only=True))
+```
+ON VEUT ça directement : print(df.mean(numeric_only=True))
+
 JUSTE LE CODE
 1. INTERDIT DE COMMENCER PAR  ```python tu retournes juste le code sans rien avant
 2. **INTERDIT :** N'ajoutez AUCUN commentaire, aucune introduction, aucune conclusion. 
