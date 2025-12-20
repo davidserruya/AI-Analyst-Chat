@@ -6,7 +6,6 @@ def ask_gemini_for_code(model, question: str, df: pd.DataFrame) -> str:
     buffer = io.StringIO()
     df.info(buf=buffer)
     df_info = buffer.getvalue()
-    print(df_info)
     prompt = f"""
 Tu es un consultant Data.
 
