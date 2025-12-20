@@ -64,7 +64,7 @@ if st.session_state.df is not None:
         with st.chat_message("assistant"):
             print('HELLO')
             code = ask_gemini_for_code(model, question, st.session_state.df)
-            prin('CODE')
+            print('CODE')
             output = execute_code(code, st.session_state.df)
             print('OUTPUT')
             answer = interpret_result(model, question, st.session_state.df, output)
