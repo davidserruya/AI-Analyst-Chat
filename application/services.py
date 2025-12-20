@@ -18,16 +18,7 @@ Structure du DataFrame :
 Question utilisateur :
 "{question}"
 
-JE TE DONNE UN EXMEPLE 
-ON ne veut PAS ça : ```python
-print(df.mean(numeric_only=True))
-```
-ON VEUT ça directement : print(df.mean(numeric_only=True))
-
-JUSTE LE CODE
-1. INTERDIT DE COMMENCER PAR  ```python tu retournes juste le code sans rien avant
-2. **INTERDIT :** N'ajoutez AUCUN commentaire, aucune introduction, aucune conclusion. 
-3. **OBLIGATOIRE :** Le code doit contenir une instruction 'print()' affichant clairement le résultat de l'analyse (utiliser .to_markdown() ou .to_string() pour les DataFrames/Series).
+JE VEUX UNIQUEMENT LE CODE POUR L'ÉXÉCUTER DE MON CÔTÉ SANS ```PYTHON, JUSTE LE CODE EN MODE CODE
 """
     return call_gemini(model, prompt)
 
