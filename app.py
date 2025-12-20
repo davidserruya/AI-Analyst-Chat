@@ -62,12 +62,9 @@ if st.session_state.df is not None:
         st.session_state.messages.append({"role": "user", "content": question})
 
         with st.chat_message("assistant"):
-            st.write('HELLO')
             code = ask_gemini_for_code(model, question, st.session_state.df)
-            st.write(code)
             output = execute_code(code, st.session_state.df)
-            st.write(output)
             answer = interpret_result(model, question, st.session_state.df, output)
-            st.write(answer)
+            st.write(code+' LALLALA '+output+' LALLALA '+answer)
 
         st.session_state.messages.append({"role": "assistant", "content": answer})
