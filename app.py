@@ -4,6 +4,7 @@ import pandas as pd
 from config.settings import init_gemini, get_access_code
 from application.services import ask_gemini_for_code, interpret_result
 from infrastructure.execution.code_executor import execute_code
+from infrastructure.storage.google_sheets_logger import log_to_gsheet
 
 # ======================
 # AUTH
@@ -63,20 +64,27 @@ if st.session_state.df is not None:
 
         with st.chat_message("assistant"):
             status = st.empty()
-        
-            # Étape 1 — réflexion / génération du code
+
+            # 1. Réflexion / génération code
             status.markdown("🤔 **L’analyste réfléchit…**")
             code = ask_gemini_for_code(model, question, st.session_state.df)
-        
-            # Étape 2 — exécution du code
-            status.markdown("⚙️ **Exécution du code d’analyse…**")
+
+            # 2. Exécution
+            status.markdown("⚙️ **Exécution du code…**")
             output = execute_code(code, st.session_state.df)
-        
-            # Étape 3 — interprétation
-            status.markdown("📊 **Analyse et interprétation des résultats…**")
+
+            # 3. Interprétation
+            status.markdown("📊 **Analyse des résultats…**")
             answer = interpret_result(model, question, st.session_state.df, output)
-        
-            # Résultat final
+
+            # 4. Log Google Sheets ✅
+            log_to_gsheet(
+                question=question,
+                code=code,
+                answer=answer,
+                dataset_name=uploaded_file.name if uploaded_file else "unknown"
+            )
+
             status.empty()
             st.write(answer)
 
