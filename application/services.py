@@ -18,6 +18,11 @@ Question utilisateur :
 "{question}"
 
 JE VEUX UNIQUEMENT LE CODE POUR L'ÉXÉCUTER DE MON CÔTÉ SANS ```PYTHON, JUSTE LE CODE EN MODE CODE
+INTERDIT :
+- créer un DataFrame
+- définir des données fictives
+- utiliser data = {...}
+- redéfinir df
 """
     return call_gemini(model, prompt)
 
